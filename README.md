@@ -89,7 +89,20 @@ HTTP Request
 | **TanStack** | Biblioteca de gerenciamento de estado de servidor para aplicações web. |
 | **Zod** | Biblioteca popular de validação e declaração de esquemas (schema) que executa regras exatas para o formato dos dados e os valide em tempo de execução |
 
-Separação de responsabilidades.
+ Fluxo de dados
+ 
+```
+App.tsx
+  ├─ useRegistros() → TanStack Query → axios → /api/v1/registros
+  ├─ RegistrosFiltros.tsx  (estado local, callback para App)
+  ├─ RegistrosTable.tsx
+  │   ├─ TanStack Table (sort, render)
+  │   ├─ useDeletarRegistro() → mutation
+  │   └─ EditarRegistroDialog.tsx → useAtualizarRegistro()
+  └─ UploadSheet.tsx
+      └─ useCriarRegistro() → mutation (FormData multipart)
+
+- Separação de responsabilidades.
 
 | Tecnologia | Descrição |
 |-----------|------------|
@@ -112,16 +125,6 @@ npm run dev
 
 O app estará disponível em **http://localhost:5173**.
 
-#### Fluxo de dados
-```
-App.tsx
-  ├─ useRegistros() → TanStack Query → axios → /api/v1/registros
-  ├─ RegistrosFiltros.tsx  (estado local, callback para App)
-  ├─ RegistrosTable.tsx
-  │   ├─ TanStack Table (sort, render)
-  │   ├─ useDeletarRegistro() → mutation
-  │   └─ EditarRegistroDialog.tsx → useAtualizarRegistro()
-  └─ UploadSheet.tsx
-      └─ useCriarRegistro() → mutation (FormData multipart)
+
 ```
 
