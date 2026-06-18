@@ -53,13 +53,11 @@ WITH CHECK (bucket_id = 'comprovantes');
 
 ```bash
 cd backend
-dotnet ef migrations add BancoInicial --project src/PointO.Infrastructure --startup-project src/PointO.API
-dotnet ef database update --project src/PointO.Infrastructure --startup-project src/PointO.API
-dotnet run --project src/PointO.API/PointO.API.csproj
+dotnet ef migrations add BancoInicial --project InfraEstrutura --startup-project ControlePresenca
+dotnet ef database update --project InfraEstrutura --startup-project ControlePresenca
+dotnet run --project ControlePresenca/ControlePresenca.csproj
 ```
-
-http://localhost:5017/swagger/index.html
-
+- Link Swagger  **http://localhost:5283/swagger/index.html**
 
 ## 📁 Frontend 
 
