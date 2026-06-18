@@ -1,7 +1,7 @@
 ## 🌐 React-Api10-EF-Jwt-Supabase-mvp
 Aplicativode controle de presença em React e C# ASP.NET 10 com banco de dados Supabase.
 
-#### 📋 O que voçê vai ver nesse Projeto
+
 
 | Tecnologia | Descrição |
 |-----------|------------|
@@ -61,9 +61,15 @@ dotnet run --project ControlePresenca/ControlePresenca.csproj
 
 ## 📁 Frontend 
 
-🔄 Executar a aplicação
+#### 📋 O que voçê vai ver nesse Projeto
 
-cd frontend
+| Tecnologia | Descrição |
+|-----------|------------|
+| **Tailwind CSS** | Framework CSS focado em utilitários para estilizar os elementos. |
+| **TanStack** | Biblioteca de gerenciamento de estado de servidor para aplicações web. |
+| **Zod** | Biblioteca popular de validação e declaração de esquemas (schema) que executa regras exatas para o formato dos dados e os valide em tempo de execução |
+
+#### 🔄 Executar a aplicação
 
 ```bash
 npm install
@@ -74,9 +80,3 @@ npm run dev
 ```
 
 O app estará disponível em `http://localhost:5173`.
-
-
-{
-  "email": "mmgustavo33@gmail.com",
-  "senha": "D2f1a2r3"
-}
