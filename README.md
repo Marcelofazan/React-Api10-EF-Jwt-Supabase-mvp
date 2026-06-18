@@ -64,7 +64,7 @@ dotnet run --project ControlePresenca/ControlePresenca.csproj
 ```
 - Link Swagger  **http://localhost:5283/swagger/index.html**
 
-### Fluxo de uma requisição
+#### Fluxo de uma requisição
 
 ```
 HTTP Request
@@ -86,7 +86,18 @@ HTTP Request
 | **TanStack** | Biblioteca de gerenciamento de estado de servidor para aplicações web. |
 | **Zod** | Biblioteca popular de validação e declaração de esquemas (schema) que executa regras exatas para o formato dos dados e os valide em tempo de execução |
 
- Fluxo de dados
+
+- Separação de responsabilidades.
+
+| Tecnologia | Descrição |
+|-----------|------------|
+| **Components** | JSX puro, só renderiza |
+| **Hooks** | toda a lógica (queries, mutations, estado) |
+| **Services** | configuração do axios |
+| **Types** | contratos TypeScript |
+
+
+#### Fluxo de dados
  
 ```
 App.tsx
@@ -100,14 +111,6 @@ App.tsx
       └─ useCriarRegistro() → mutation (FormData multipart)
 ```
 
-- Separação de responsabilidades.
-
-| Tecnologia | Descrição |
-|-----------|------------|
-| **Components** | JSX puro, só renderiza |
-| **Hooks** | toda a lógica (queries, mutations, estado) |
-| **Services** | configuração do axios |
-| **Types** | contratos TypeScript |
 
 
 #### 🔄 Executar a aplicação
