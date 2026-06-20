@@ -97,8 +97,9 @@ npm install
 ```bash
 npm run dev
 ```
+O app estará disponível em **http://localhost:5173**.
 
-- Separação de responsabilidades.
+#### Separação de responsabilidades.
 
 | Tecnologia | Descrição |
 |-----------|------------|
@@ -109,7 +110,6 @@ npm run dev
 
 
 #### Fluxo de dados
- 
 ```
 App.tsx
   ├─ useRegistros() → TanStack Query → axios → /api/v1/registros
@@ -121,7 +121,3 @@ App.tsx
   └─ UploadSheet.tsx
       └─ useCriarRegistro() → mutation (FormData multipart)
 ```
-
-
-
-O app estará disponível em **http://localhost:5173**.
