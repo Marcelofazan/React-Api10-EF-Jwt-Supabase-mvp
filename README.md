@@ -5,9 +5,34 @@ Aplicativo de controle de presença em React e API CQRS com autenticação Jwt e
 #### 🎨 Aqui está uma demonstração do projeto
 <img width="800" height="350" alt="Controle_Presenca" src="https://github.com/user-attachments/assets/13a7a3db-e3dc-412f-bb52-01bc602aaa70" />
 
-#### 📁 Requisitos do Projeto
+#### 💬 Requisitos do Projeto
+- Chave Secreta Supabase e criação de Storage Supabase para salvar imagens. 
 
-- Supabase — configuração inicial
+## 📁 Backend 
+
+#### 📋 O que voçê vai ver nesse Projeto
+
+| Tecnologia | Descrição |
+|-----------|------------|
+| **CQRS** | É um padrão arquitetural que separa as operações de escrita (comandos) das operações de leitura (consultas) |
+| **CORS** | Mecanismo de segurança implementado no navegador e não uma responsabilidade do frontend ou backend |
+| **Fluent Validation** | Biblioteca para regras de validação de forma simples, legível e desacoplada|
+| **JWT** | É um crachá digital usado para identificar usuários e trocar informações de forma segura entre computadores |
+| **Mediatr** | Desacoplar classes, permitindo que diferentes componentes de um sistema se comuniquem através de um ponto central (o mediador)|
+| **Supabase** | Wrapper (capa facilitadora) para simplificar o desenvolvimento com o banco de dados PostgreSQL  |
+| **Storage Supabase** | Gerenciamento e armazenamento de arquivos de qualquer tipo como imagens, vídeos, PDFs e documentos. |
+
+#### 🔄 Executar a aplicação
+
+```bash
+cd backend
+dotnet ef migrations add BancoInicial --project InfraEstrutura --startup-project ControlePresenca
+dotnet ef database update --project InfraEstrutura --startup-project ControlePresenca
+dotnet run --project ControlePresenca/ControlePresenca.csproj
+```
+- Link Swagger  **http://localhost:5283/swagger/index.html**
+
+#### ⚙️ Configuração - Supabase 
 
 1- Get connected -> Escolha Direct Connection String -> Selecione Type e Copie a conexão .NET.
 
@@ -40,30 +65,6 @@ TO anon
 WITH CHECK (bucket_id = 'comprovantes');
 ```
 
-## 📁 Backend 
-
-#### 📋 O que voçê vai ver nesse Projeto
-
-| Tecnologia | Descrição |
-|-----------|------------|
-| **CQRS** | É um padrão arquitetural que separa as operações de escrita (comandos) das operações de leitura (consultas) |
-| **CORS** | Mecanismo de segurança implementado no navegador e não uma responsabilidade do frontend ou backend |
-| **Fluent Validation** | Biblioteca para regras de validação de forma simples, legível e desacoplada|
-| **JWT** | É um crachá digital usado para identificar usuários e trocar informações de forma segura entre computadores |
-| **Mediatr** | Desacoplar classes, permitindo que diferentes componentes de um sistema se comuniquem através de um ponto central (o mediador)|
-| **Supabase** | Wrapper (capa facilitadora) para simplificar o desenvolvimento com o banco de dados PostgreSQL  |
-| **Storage Supabase** | Gerenciamento e armazenamento de arquivos de qualquer tipo como imagens, vídeos, PDFs e documentos. |
-
-#### 🔄 Executar a aplicação
-
-```bash
-cd backend
-dotnet ef migrations add BancoInicial --project InfraEstrutura --startup-project ControlePresenca
-dotnet ef database update --project InfraEstrutura --startup-project ControlePresenca
-dotnet run --project ControlePresenca/ControlePresenca.csproj
-```
-- Link Swagger  **http://localhost:5283/swagger/index.html**
-
 #### Fluxo de uma requisição
 
 ```
@@ -86,6 +87,16 @@ HTTP Request
 | **TanStack** | Biblioteca de gerenciamento de estado de servidor para aplicações web. |
 | **Zod** | Biblioteca popular de validação e declaração de esquemas (schema) que executa regras exatas para o formato dos dados e os valide em tempo de execução |
 
+#### 🔄 Executar a aplicação
+
+- Recuperar as dependencias do projeto node_modules .
+```bash
+npm install
+```
+- Executar o Build do Projeto
+```bash
+npm run dev
+```
 
 - Separação de responsabilidades.
 
@@ -112,16 +123,5 @@ App.tsx
 ```
 
 
-
-#### 🔄 Executar a aplicação
-
-- Recuperar as dependencias do projeto node_modules .
-```bash
-npm install
-```
-- Executar o Build do Projeto
-```bash
-npm run dev
-```
 
 O app estará disponível em **http://localhost:5173**.
